@@ -58,6 +58,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CHUNGKHOANDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="CHUNGKHOANDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CHUNGKHOANDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +103,17 @@
     </None>
     <None Include="CHUNGKHOANDataSet.xss">
       <DependentUpon>CHUNGKHOANDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CHUNGKHOANDataSet1.xsc">
+      <DependentUpon>CHUNGKHOANDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="CHUNGKHOANDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CHUNGKHOANDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CHUNGKHOANDataSet1.xss">
+      <DependentUpon>CHUNGKHOANDataSet1.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
