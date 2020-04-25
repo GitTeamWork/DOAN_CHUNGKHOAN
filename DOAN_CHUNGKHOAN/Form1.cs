@@ -42,7 +42,8 @@ namespace DOAN_CHUNGKHOAN
 
         private string GetConnectionString()
         {
-            return "Data Source=LQUYNH;Initial Catalog=CHUNGKHOAN;User ID=sa;Password=1";
+            return "Data Source=MSI;Initial Catalog=CHUNGKHOAN;User ID=sa;Password=0909";
+            //return "Data Source=LQUYNH;Initial Catalog=CHUNGKHOAN;User ID=sa;Password=1";
         }
 
         private string GetSQL()
@@ -135,10 +136,12 @@ namespace DOAN_CHUNGKHOAN
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'cHUNGKHOANDataSet.LENHDAT' table. You can move, or remove it, as needed.
+            this.lENHDATTableAdapter.Fill(this.cHUNGKHOANDataSet.LENHDAT);
             // TODO: This line of code loads data into the 'cHUNGKHOANDataSet1.LENHDAT' table. You can move, or remove it, as needed.
-            this.lENHDATTableAdapter1.Fill(this.cHUNGKHOANDataSet1.LENHDAT);
-            // TODO: This line of code loads data into the 'cHUNGKHOANDataSet.LenhDat' table. You can move, or remove it, as needed.
-            //this.lenhDatTableAdapter.Fill(this.cHUNGKHOANDataSet.LenhDat);
+            //this.lENHDATTableAdapter1.Fill(this.cHUNGKHOANDataSet1.LENHDAT);
+            
+        
         }
 
 
@@ -166,7 +169,7 @@ namespace DOAN_CHUNGKHOAN
             {
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 MessageBox.Show("Đặt lệnh thành công ", "", MessageBoxButtons.OK);
-                this.lenhDatTableAdapter.Fill(this.cHUNGKHOANDataSet.LenhDat);
+                //this.lenhDatTableAdapter.Fill(this.cHUNGKHOANDataSet.LenhDat);
             }
             catch (Exception ex)
             {
