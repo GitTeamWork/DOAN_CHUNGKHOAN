@@ -30,11 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lENHDATGridControl = new DevExpress.XtraGrid.GridControl();
+            this.lENHDATBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cHUNGKHOANDataSet = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSet();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.lENHDATBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cHUNGKHOANDataSet1 = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSet1();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -51,28 +56,25 @@
             this.radioMua = new System.Windows.Forms.RadioButton();
             this.lENHDATTableAdapter1 = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSet1TableAdapters.LENHDATTableAdapter();
             this.tableAdapterManager1 = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSet1TableAdapters.TableAdapterManager();
-            this.cHUNGKHOANDataSet = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSet();
-            this.lENHDATBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lENHDATTableAdapter = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSetTableAdapters.LENHDATTableAdapter();
             this.tableAdapterManager = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSetTableAdapters.TableAdapterManager();
-            this.lENHDATGridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lENHDATGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lENHDATBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHUNGKHOANDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lENHDATBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHUNGKHOANDataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numGiaDat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cHUNGKHOANDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lENHDATBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lENHDATGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.listBox2);
             this.groupBox2.Controls.Add(this.dataGridView1);
@@ -83,10 +85,20 @@
             this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(1371, 310);
+            this.groupBox2.Size = new System.Drawing.Size(1526, 310);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "BẢNG GIÁ TRỰC TUYẾN";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1388, 249);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label5
             // 
@@ -127,7 +139,7 @@
             this.listBox1.Location = new System.Drawing.Point(3, 17);
             this.listBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(1365, 291);
+            this.listBox1.Size = new System.Drawing.Size(1520, 291);
             this.listBox1.TabIndex = 0;
             // 
             // groupBox3
@@ -139,10 +151,37 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(1204, 328);
+            this.groupBox3.Size = new System.Drawing.Size(1204, 352);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "SỔ LỆNH";
+            // 
+            // lENHDATGridControl
+            // 
+            this.lENHDATGridControl.DataSource = this.lENHDATBindingSource;
+            this.lENHDATGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lENHDATGridControl.Location = new System.Drawing.Point(3, 17);
+            this.lENHDATGridControl.MainView = this.gridView1;
+            this.lENHDATGridControl.Name = "lENHDATGridControl";
+            this.lENHDATGridControl.Size = new System.Drawing.Size(1198, 333);
+            this.lENHDATGridControl.TabIndex = 0;
+            this.lENHDATGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // lENHDATBindingSource
+            // 
+            this.lENHDATBindingSource.DataMember = "LENHDAT";
+            this.lENHDATBindingSource.DataSource = this.cHUNGKHOANDataSet;
+            // 
+            // cHUNGKHOANDataSet
+            // 
+            this.cHUNGKHOANDataSet.DataSetName = "CHUNGKHOANDataSet";
+            this.cHUNGKHOANDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.lENHDATGridControl;
+            this.gridView1.Name = "gridView1";
             // 
             // lENHDATBindingSource1
             // 
@@ -173,14 +212,16 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(167, 328);
+            this.groupBox1.Size = new System.Drawing.Size(322, 352);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ĐẶT LỆNH MỚI";
             // 
             // dtpNgay
             // 
+            this.dtpNgay.CustomFormat = "";
             this.dtpNgay.Enabled = false;
+            this.dtpNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpNgay.Location = new System.Drawing.Point(235, 178);
             this.dtpNgay.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpNgay.Name = "dtpNgay";
@@ -303,16 +344,6 @@
             this.tableAdapterManager1.TRUCTUYENTableAdapter = null;
             this.tableAdapterManager1.UpdateOrder = DOAN_CHUNGKHOAN.CHUNGKHOANDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // cHUNGKHOANDataSet
-            // 
-            this.cHUNGKHOANDataSet.DataSetName = "CHUNGKHOANDataSet";
-            this.cHUNGKHOANDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lENHDATBindingSource
-            // 
-            this.lENHDATBindingSource.DataMember = "LENHDAT";
-            this.lENHDATBindingSource.DataSource = this.cHUNGKHOANDataSet;
-            // 
             // lENHDATTableAdapter
             // 
             this.lENHDATTableAdapter.ClearBeforeFill = true;
@@ -325,32 +356,16 @@
             this.tableAdapterManager.TRUCTUYENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = DOAN_CHUNGKHOAN.CHUNGKHOANDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // lENHDATGridControl
-            // 
-            this.lENHDATGridControl.DataSource = this.lENHDATBindingSource;
-            this.lENHDATGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lENHDATGridControl.Location = new System.Drawing.Point(3, 17);
-            this.lENHDATGridControl.MainView = this.gridView1;
-            this.lENHDATGridControl.Name = "lENHDATGridControl";
-            this.lENHDATGridControl.Size = new System.Drawing.Size(1198, 309);
-            this.lENHDATGridControl.TabIndex = 0;
-            this.lENHDATGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.lENHDATGridControl;
-            this.gridView1.Name = "gridView1";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1371, 638);
+            this.ClientSize = new System.Drawing.Size(1526, 662);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -360,16 +375,16 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.lENHDATGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lENHDATBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cHUNGKHOANDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lENHDATBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHUNGKHOANDataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numGiaDat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cHUNGKHOANDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lENHDATBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lENHDATGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -403,6 +418,7 @@
         private CHUNGKHOANDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl lENHDATGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

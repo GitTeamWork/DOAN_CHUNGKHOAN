@@ -140,8 +140,6 @@ namespace DOAN_CHUNGKHOAN
             this.lENHDATTableAdapter.Fill(this.cHUNGKHOANDataSet.LENHDAT);
             // TODO: This line of code loads data into the 'cHUNGKHOANDataSet1.LENHDAT' table. You can move, or remove it, as needed.
             //this.lENHDATTableAdapter1.Fill(this.cHUNGKHOANDataSet1.LENHDAT);
-            
-        
         }
 
 
@@ -154,7 +152,7 @@ namespace DOAN_CHUNGKHOAN
             }
             if (txtMaCP.Text.Trim() == "")
             {
-                MessageBox.Show("Thông tin bạn điền thiếu!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng nhập mã Cổ Phiếu!", "", MessageBoxButtons.OK);
                 return;
             }
             if (radioMua.Checked == true) loaiGD = 'M';
@@ -162,35 +160,45 @@ namespace DOAN_CHUNGKHOAN
 
             if (Program.KetNoi() == 0) return;
             string strLenh = "EXEC SP_KHOPLENH_LO '" + txtMaCP.Text + "','" + dtpNgay.Value.ToString("dd-MM-yyyy")+ "','" + loaiGD + "'," + numSoLuong.Text + "," + numGiaDat.Text;
-            //MessageBox.Show(strLenh);
-            Console.Write(strLenh);
 
             try
             {
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 MessageBox.Show("Đặt lệnh thành công ", "", MessageBoxButtons.OK);
-                //this.lenhDatTableAdapter.Fill(this.cHUNGKHOANDataSet.LenhDat);
+                this.lENHDATTableAdapter.Fill(this.cHUNGKHOANDataSet.LENHDAT);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                MessageBox.Show("Lỗi đặt lệnh!\n" + ex.Message, "Notification",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
             if (Program.myReader == null) return;
-            Program.myReader.Read(); // neu sp co nhieu dong bor vao wile(....true)
-
-
-            //Program.username = Program.myReader.GetString(0);     // Lay user name
-            //if (Convert.IsDBNull(Program.username))
-            //{
-            //    MessageBox.Show("Login bạn nhập không có quyền truy cập dữ liệu\n Bạn xem lại username, password", "", MessageBoxButtons.OK);
-            //    return;
-            //}
-            //Program.mHoten = Program.myReader.GetString(1);
-            //Program.mGroup = Program.myReader.GetString(2);
-            //Program.myReader.Close();
+            Program.myReader.Read(); 
             Program.conn.Close();
-            //MessageBox.Show("Nhan vien - Nhom : " + Program.mHoten + " - " + Program.mGroup, "", MessageBoxButtons.OK);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Program.KetNoi() == 0) return;
+            string strLenh = "EXEC SP_RESET_TTL EXEC SP_CLEARDATE_TRUCTUYEN";
+
+            try
+            {
+                Program.myReader = Program.ExecSqlDataReader(strLenh);
+                MessageBox.Show("Reset thành công ", "", MessageBoxButtons.OK);
+                this.lENHDATTableAdapter.Fill(this.cHUNGKHOANDataSet.LENHDAT);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi thực thi SP!\n" + ex.Message, "Notification",
+                       MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            if (Program.myReader == null) return;
+            Program.myReader.Read();
+            Program.conn.Close();
         }
     }
 }
