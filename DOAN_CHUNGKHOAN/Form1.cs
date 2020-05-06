@@ -18,7 +18,7 @@ namespace DOAN_CHUNGKHOAN
 
         private int changeCount = 0;
         private const string tableName = "Tructuyen";
-        private const string statusMessage = "Đã có {0} thay đổi.";
+        //private const string statusMessage = "Đã có {0} thay đổi.";
 
         private SqlConnection connection = null;
         private SqlCommand command = null;
@@ -64,7 +64,7 @@ namespace DOAN_CHUNGKHOAN
             SqlDependency dependency = (SqlDependency)sender;
             dependency.OnChange -= dependency_OnChange;
             changeCount += 1;
-            this.label5.Text = string.Format(statusMessage, changeCount);
+            //this.label5.Text = string.Format(statusMessage, changeCount);
             {
                 var withBlock = this.listBox2.Items;
                 withBlock.Clear();
@@ -155,6 +155,7 @@ namespace DOAN_CHUNGKHOAN
                 MessageBox.Show("Vui lòng nhập mã Cổ Phiếu!", "", MessageBoxButtons.OK);
                 return;
             }
+           
             if (radioMua.Checked == true) loaiGD = 'M';
             else loaiGD = 'B';
 
@@ -166,6 +167,7 @@ namespace DOAN_CHUNGKHOAN
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 MessageBox.Show("Đặt lệnh thành công ", "", MessageBoxButtons.OK);
                 this.lENHDATTableAdapter.Fill(this.cHUNGKHOANDataSet.LENHDAT);
+                //this.lENHDATTableAdapter1.Fill(this.cHUNGKHOANDataSet1.LENHDAT);
             }
             catch (Exception ex)
             {
@@ -199,6 +201,39 @@ namespace DOAN_CHUNGKHOAN
             if (Program.myReader == null) return;
             Program.myReader.Read();
             Program.conn.Close();
+        }
+
+        private void txtMaCP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.ToString().IndexOfAny(@"0123456789!@#$%^&*()_+=|\{}[]?><.,';:".ToCharArray()) != -1)  // chổ nầy ko hiểu tại sao lại !=-1
+            {
+                e.Handled = true;
+                MessageBox.Show("Mã cổ phiếu phải nhập kiểu chữ và không có ký tự đặt biệt", "Thông báo");
+            }
+            else
+                e.Handled = false;
+        }
+
+        private void numSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 48 )
+            {
+                e.Handled = true;
+                MessageBox.Show("Số lượng phải lớn hơn 0", "Thông báo");
+            }
+            else
+                e.Handled = false;
+        }
+
+        private void numGiaDat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 48)
+            {
+                e.Handled = true;
+                MessageBox.Show("Số lượng phải lớn hơn 0", "Thông báo");
+            }
+            else
+                e.Handled = false;
         }
     }
 }

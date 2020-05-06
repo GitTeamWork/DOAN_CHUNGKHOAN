@@ -270,9 +270,11 @@
             0,
             0,
             0});
+            this.numGiaDat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numGiaDat_KeyPress);
             // 
             // numSoLuong
             // 
+            this.numSoLuong.Cursor = System.Windows.Forms.Cursors.Default;
             this.numSoLuong.Location = new System.Drawing.Point(235, 223);
             this.numSoLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numSoLuong.Maximum = new decimal(new int[] {
@@ -293,6 +295,7 @@
             0,
             0,
             0});
+            this.numSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numSoLuong_KeyPress);
             // 
             // btnDatLenh
             // 
@@ -350,6 +353,7 @@
             this.txtMaCP.Name = "txtMaCP";
             this.txtMaCP.Size = new System.Drawing.Size(129, 22);
             this.txtMaCP.TabIndex = 2;
+            this.txtMaCP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaCP_KeyPress);
             // 
             // radioBan
             // 
