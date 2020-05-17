@@ -155,12 +155,18 @@ namespace DOAN_CHUNGKHOAN
                 MessageBox.Show("Vui lòng nhập mã Cổ Phiếu!", "", MessageBoxButtons.OK);
                 return;
             }
+
+            if (txtSoLuong.Text.Trim() == "0")
+            {
+                MessageBox.Show("Số lượng phải lớn hơn 0!", "", MessageBoxButtons.OK);
+                return;
+            }
            
             if (radioMua.Checked == true) loaiGD = 'M';
             else loaiGD = 'B';
 
             if (Program.KetNoi() == 0) return;
-            string strLenh = "EXEC SP_KHOPLENH_LO '" + txtMaCP.Text + "','" + dtpNgay.Value.ToString("dd-MM-yyyy")+ "','" + loaiGD + "'," + numSoLuong.Text + "," + numGiaDat.Text;
+            string strLenh = "EXEC SP_KHOPLENH_LO '" + txtMaCP.Text + "','" + dtpNgay.Value.ToString("dd-MM-yyyy")+ "','" + loaiGD + "'," + txtSoLuong.Text + "," + txtGiaDat.Text;
 
             try
             {
@@ -214,23 +220,23 @@ namespace DOAN_CHUNGKHOAN
                 e.Handled = false;
         }
 
-        private void numSoLuong_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 48 )
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
-                MessageBox.Show("Số lượng phải lớn hơn 0", "Thông báo");
+                MessageBox.Show("Số lượng sai định dạng, vui lòng chỉ nhập số", "Thông báo");
             }
             else
                 e.Handled = false;
         }
 
-        private void numGiaDat_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtGiaDat_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == 48)
+            if (e.KeyChar < 48 || e.KeyChar > 57)
             {
                 e.Handled = true;
-                MessageBox.Show("Số lượng phải lớn hơn 0", "Thông báo");
+                MessageBox.Show("Gía sai định dạng, vui lòng chỉ nhập số", "Thông báo");
             }
             else
                 e.Handled = false;

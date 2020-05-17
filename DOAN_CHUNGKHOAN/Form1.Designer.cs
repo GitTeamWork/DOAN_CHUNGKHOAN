@@ -45,8 +45,6 @@
             this.cHUNGKHOANDataSet1 = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSet1();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
-            this.numGiaDat = new System.Windows.Forms.NumericUpDown();
-            this.numSoLuong = new System.Windows.Forms.NumericUpDown();
             this.btnDatLenh = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,6 +57,8 @@
             this.tableAdapterManager1 = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSet1TableAdapters.TableAdapterManager();
             this.lENHDATTableAdapter = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSetTableAdapters.LENHDATTableAdapter();
             this.tableAdapterManager = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSetTableAdapters.TableAdapterManager();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.txtGiaDat = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -70,8 +70,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.lENHDATBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cHUNGKHOANDataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numGiaDat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
@@ -215,9 +213,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtGiaDat);
+            this.groupBox1.Controls.Add(this.txtSoLuong);
             this.groupBox1.Controls.Add(this.dtpNgay);
-            this.groupBox1.Controls.Add(this.numGiaDat);
-            this.groupBox1.Controls.Add(this.numSoLuong);
             this.groupBox1.Controls.Add(this.btnDatLenh);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -247,55 +245,6 @@
             this.dtpNgay.Name = "dtpNgay";
             this.dtpNgay.Size = new System.Drawing.Size(200, 22);
             this.dtpNgay.TabIndex = 13;
-            // 
-            // numGiaDat
-            // 
-            this.numGiaDat.Location = new System.Drawing.Point(235, 270);
-            this.numGiaDat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.numGiaDat.Maximum = new decimal(new int[] {
-            10000000,
-            0,
-            0,
-            0});
-            this.numGiaDat.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numGiaDat.Name = "numGiaDat";
-            this.numGiaDat.Size = new System.Drawing.Size(131, 22);
-            this.numGiaDat.TabIndex = 12;
-            this.numGiaDat.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numGiaDat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numGiaDat_KeyPress);
-            // 
-            // numSoLuong
-            // 
-            this.numSoLuong.Cursor = System.Windows.Forms.Cursors.Default;
-            this.numSoLuong.Location = new System.Drawing.Point(235, 223);
-            this.numSoLuong.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.numSoLuong.Maximum = new decimal(new int[] {
-            10000,
-            0,
-            0,
-            0});
-            this.numSoLuong.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numSoLuong.Name = "numSoLuong";
-            this.numSoLuong.Size = new System.Drawing.Size(131, 22);
-            this.numSoLuong.TabIndex = 11;
-            this.numSoLuong.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.numSoLuong_KeyPress);
             // 
             // btnDatLenh
             // 
@@ -401,6 +350,22 @@
             this.tableAdapterManager.TRUCTUYENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = DOAN_CHUNGKHOAN.CHUNGKHOANDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(235, 223);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(100, 22);
+            this.txtSoLuong.TabIndex = 14;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
+            // 
+            // txtGiaDat
+            // 
+            this.txtGiaDat.Location = new System.Drawing.Point(235, 271);
+            this.txtGiaDat.Name = "txtGiaDat";
+            this.txtGiaDat.Size = new System.Drawing.Size(100, 22);
+            this.txtGiaDat.TabIndex = 15;
+            this.txtGiaDat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaDat_KeyPress);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -429,8 +394,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cHUNGKHOANDataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numGiaDat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSoLuong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,8 +412,6 @@
         private System.Windows.Forms.Button btnDatLenh;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.DateTimePicker dtpNgay;
-        private System.Windows.Forms.NumericUpDown numGiaDat;
-        private System.Windows.Forms.NumericUpDown numSoLuong;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox listBox2;
@@ -466,6 +427,8 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtSoLuong;
+        private System.Windows.Forms.TextBox txtGiaDat;
     }
 }
 
