@@ -147,23 +147,32 @@ namespace DOAN_CHUNGKHOAN
         {
             if (radioMua.Checked == false && radioBan.Checked == false)
             {
-                MessageBox.Show("Vui lòng chọn hình thức Mua hoặc Bán", "", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng chọn hình thức Mua hoặc Bán", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
             if (txtMaCP.Text.Trim() == "")
             {
-                MessageBox.Show("Vui lòng nhập mã Cổ Phiếu!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Vui lòng nhập mã Cổ Phiếu!", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
-
+            if (txtSoLuong.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập số lượng mua Cổ Phiếu!", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+            if (txtGiaDat.Text.Trim() == "")
+            {
+                MessageBox.Show("Vui lòng nhập giá đặt !", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
             if (txtSoLuong.Text.Trim() == "0")
             {
-                MessageBox.Show("Số lượng phải lớn hơn 0!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Số lượng phải lớn hơn 0!", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
             if (txtGiaDat.Text.Trim() == "0")
             {
-                MessageBox.Show("Gía đặt phải lớn hơn 0!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Gía đặt phải lớn hơn 0!", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
             if (radioMua.Checked == true) loaiGD = 'M';
@@ -175,14 +184,18 @@ namespace DOAN_CHUNGKHOAN
             try
             {
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
-                MessageBox.Show("Đặt lệnh thành công ", "", MessageBoxButtons.OK);
-                this.lENHDATTableAdapter.Fill(this.cHUNGKHOANDataSet.LENHDAT);
+                if (Program.myReader != null)
+                {
+                    MessageBox.Show("Đặt lệnh thành công ", "Thông báo", MessageBoxButtons.OK);
+                    this.lENHDATTableAdapter.Fill(this.cHUNGKHOANDataSet.LENHDAT);
+                }
+                
                 //this.lENHDATTableAdapter1.Fill(this.cHUNGKHOANDataSet1.LENHDAT);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
-                MessageBox.Show("Lỗi đặt lệnh!\n" + ex.Message, "Notification",
+                //MessageBox.Show(ex.ToString());
+                MessageBox.Show("Lỗi đặt lệnh!\n" + ex.Message, "Thông báo",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
@@ -199,12 +212,12 @@ namespace DOAN_CHUNGKHOAN
             try
             {
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
-                MessageBox.Show("Reset thành công ", "", MessageBoxButtons.OK);
+                MessageBox.Show("Reset thành công ", "Thông báo", MessageBoxButtons.OK);
                 this.lENHDATTableAdapter.Fill(this.cHUNGKHOANDataSet.LENHDAT);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi thực thi SP!\n" + ex.Message, "Notification",
+                MessageBox.Show("Lỗi khi thực thi SP!\n" + ex.Message, "Thông báo",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -219,6 +232,7 @@ namespace DOAN_CHUNGKHOAN
             {
                 e.Handled = true;
                 MessageBox.Show("Mã cổ phiếu phải nhập kiểu chữ và không có ký tự đặt biệt", "Thông báo");
+                return;
             }
             else
                 e.Handled = false;
@@ -230,6 +244,7 @@ namespace DOAN_CHUNGKHOAN
             {
                 e.Handled = true;
                 MessageBox.Show("Số lượng sai định dạng, vui lòng chỉ nhập số", "Thông báo");
+                return;
             }
             else
                 e.Handled = false;
@@ -241,6 +256,7 @@ namespace DOAN_CHUNGKHOAN
             {
                 e.Handled = true;
                 MessageBox.Show("Gía sai định dạng, vui lòng chỉ nhập số", "Thông báo");
+                return;
             }
             else
                 e.Handled = false;

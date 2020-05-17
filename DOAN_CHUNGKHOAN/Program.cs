@@ -46,7 +46,7 @@ namespace DOAN_CHUNGKHOAN
 
             catch (Exception e)
             {
-                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu.\nBạn xem lại user name và password.\n " + e.Message, "Kết nối", MessageBoxButtons.OK);
                 return 0;
             }
         }
@@ -65,7 +65,7 @@ namespace DOAN_CHUNGKHOAN
             catch (SqlException ex)
             {
                 Program.conn.Close();
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Exec");
                 return null;
             }
         }
