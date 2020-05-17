@@ -161,7 +161,11 @@ namespace DOAN_CHUNGKHOAN
                 MessageBox.Show("Số lượng phải lớn hơn 0!", "", MessageBoxButtons.OK);
                 return;
             }
-           
+            if (txtGiaDat.Text.Trim() == "0")
+            {
+                MessageBox.Show("Gía đặt phải lớn hơn 0!", "", MessageBoxButtons.OK);
+                return;
+            }
             if (radioMua.Checked == true) loaiGD = 'M';
             else loaiGD = 'B';
 
