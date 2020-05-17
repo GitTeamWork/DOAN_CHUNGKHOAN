@@ -226,7 +226,7 @@ namespace DOAN_CHUNGKHOAN
 
         private void txtSoLuong_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar < 48 || e.KeyChar > 57)
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8)
             {
                 e.Handled = true;
                 MessageBox.Show("Số lượng sai định dạng, vui lòng chỉ nhập số", "Thông báo");
@@ -237,7 +237,7 @@ namespace DOAN_CHUNGKHOAN
 
         private void txtGiaDat_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar < 48 || e.KeyChar > 57)
+            if ((e.KeyChar < 48 || e.KeyChar > 57) && e.KeyChar != 8)
             {
                 e.Handled = true;
                 MessageBox.Show("Gía sai định dạng, vui lòng chỉ nhập số", "Thông báo");
