@@ -44,6 +44,8 @@
             this.lENHDATBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.cHUNGKHOANDataSet1 = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSet1();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtGiaDat = new System.Windows.Forms.TextBox();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.dtpNgay = new System.Windows.Forms.DateTimePicker();
             this.btnDatLenh = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,8 +59,6 @@
             this.tableAdapterManager1 = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSet1TableAdapters.TableAdapterManager();
             this.lENHDATTableAdapter = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSetTableAdapters.LENHDATTableAdapter();
             this.tableAdapterManager = new DOAN_CHUNGKHOAN.CHUNGKHOANDataSetTableAdapters.TableAdapterManager();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
-            this.txtGiaDat = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -95,9 +95,9 @@
             this.groupBox4.Controls.Add(this.listBox2);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox4.Location = new System.Drawing.Point(1134, 17);
+            this.groupBox4.Location = new System.Drawing.Point(1203, 17);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(389, 291);
+            this.groupBox4.Size = new System.Drawing.Size(320, 291);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "THÔNG TIN";
@@ -139,7 +139,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1131, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(1200, 291);
             this.dataGridView1.TabIndex = 1;
             // 
             // listBox1
@@ -234,6 +234,22 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ĐẶT LỆNH MỚI";
+            // 
+            // txtGiaDat
+            // 
+            this.txtGiaDat.Location = new System.Drawing.Point(235, 271);
+            this.txtGiaDat.Name = "txtGiaDat";
+            this.txtGiaDat.Size = new System.Drawing.Size(100, 22);
+            this.txtGiaDat.TabIndex = 15;
+            this.txtGiaDat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaDat_KeyPress);
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(235, 223);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(100, 22);
+            this.txtSoLuong.TabIndex = 14;
+            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
             // 
             // dtpNgay
             // 
@@ -349,22 +365,6 @@
             this.tableAdapterManager.LENHKHOPTableAdapter = null;
             this.tableAdapterManager.TRUCTUYENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = DOAN_CHUNGKHOAN.CHUNGKHOANDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.Location = new System.Drawing.Point(235, 223);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(100, 22);
-            this.txtSoLuong.TabIndex = 14;
-            this.txtSoLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoLuong_KeyPress);
-            // 
-            // txtGiaDat
-            // 
-            this.txtGiaDat.Location = new System.Drawing.Point(235, 271);
-            this.txtGiaDat.Name = "txtGiaDat";
-            this.txtGiaDat.Size = new System.Drawing.Size(100, 22);
-            this.txtGiaDat.TabIndex = 15;
-            this.txtGiaDat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaDat_KeyPress);
             // 
             // Form1
             // 
