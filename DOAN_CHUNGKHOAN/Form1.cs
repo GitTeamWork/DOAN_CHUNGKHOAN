@@ -165,12 +165,12 @@ namespace DOAN_CHUNGKHOAN
                 MessageBox.Show("Vui lòng nhập giá đặt !", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
-            if (txtSoLuong.Text.Trim() == "0")
+            if (Int32.Parse(txtSoLuong.Text.Trim()) == 0)
             {
                 MessageBox.Show("Số lượng phải lớn hơn 0!", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
-            if (txtGiaDat.Text.Trim() == "0")
+            if (Int32.Parse(txtGiaDat.Text.Trim()) == 0)
             {
                 MessageBox.Show("Gía đặt phải lớn hơn 0!", "Thông báo", MessageBoxButtons.OK);
                 return;
