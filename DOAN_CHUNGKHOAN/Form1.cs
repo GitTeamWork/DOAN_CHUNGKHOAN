@@ -198,7 +198,10 @@ namespace DOAN_CHUNGKHOAN
                 MessageBox.Show("Lỗi đặt lệnh!\n" + ex.Message, "Thông báo",
                        MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
+            txtMaCP.Text = "";
+            txtGiaDat.Text = "";
+            txtSoLuong.Text = "";
             if (Program.myReader == null) return;
             Program.myReader.Read(); 
             Program.conn.Close();
