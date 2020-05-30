@@ -209,7 +209,7 @@ namespace DOAN_CHUNGKHOAN
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (Program.KetNoi() == 0) return;
+            if (Program.KetNoi()  == 0) return;
             string strLenh = "EXEC SP_RESET_TTL EXEC SP_CLEARDATE_TRUCTUYEN";
 
             try

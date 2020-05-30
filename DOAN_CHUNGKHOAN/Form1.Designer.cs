@@ -200,6 +200,7 @@
             this.gridView1.Appearance.ColumnFilterButton.Options.UseForeColor = true;
             this.gridView1.GridControl = this.lENHDATGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             // 
             // lENHDATBindingSource1
             // 
