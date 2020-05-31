@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace DOAN_CHUNGKHOAN
 {
-    public partial class Form1 : Form
+    public partial class fmChungKhoan : Form
     {
         private char loaiGD;
 
@@ -117,7 +117,7 @@ namespace DOAN_CHUNGKHOAN
             GetData();
         }
 
-        public Form1()
+        public fmChungKhoan()
         {
             InitializeComponent();
             if (CanRequestNotifications() == true)
@@ -186,7 +186,10 @@ namespace DOAN_CHUNGKHOAN
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 if (Program.myReader != null)
                 {
-                    MessageBox.Show("Đặt lệnh thành công ", "Thông báo", MessageBoxButtons.OK);
+                    Program.myReader.Read();
+                    Int32 ret = Program.myReader.GetInt32(0);
+                    //MessageBox.Show(ret.ToString());
+                    MessageBox.Show("Đặt lệnh thành công, số cổ phiếu khớp là:  "+ret.ToString(), "Thông báo", MessageBoxButtons.OK);
                     this.lENHDATTableAdapter.Fill(this.cHUNGKHOANDataSet.LENHDAT);
                 }
                 
@@ -203,14 +206,14 @@ namespace DOAN_CHUNGKHOAN
             txtGiaDat.Text = "";
             txtSoLuong.Text = "";
             if (Program.myReader == null) return;
-            Program.myReader.Read(); 
             Program.conn.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (Program.KetNoi()  == 0) return;
-            string strLenh = "EXEC SP_RESET_TTL EXEC SP_CLEARDATE_TRUCTUYEN";
+            string strLenh = "EXEC SP_RESET_TTL " +
+                             "EXEC SP_CLEARDATE_TRUCTUYEN";
 
             try
             {

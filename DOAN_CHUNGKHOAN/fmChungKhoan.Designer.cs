@@ -1,6 +1,6 @@
 ﻿namespace DOAN_CHUNGKHOAN
 {
-    partial class Form1
+    partial class fmChungKhoan
     {
         /// <summary>
         /// Required designer variable.
@@ -367,7 +367,7 @@
             this.tableAdapterManager.TRUCTUYENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = DOAN_CHUNGKHOAN.CHUNGKHOANDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // Form1
+            // fmChungKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -378,8 +378,8 @@
             this.Controls.Add(this.groupBox2);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "fmChungKhoan";
+            this.Text = "ChungKhoan";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox2.ResumeLayout(false);
