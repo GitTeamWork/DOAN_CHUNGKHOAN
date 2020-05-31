@@ -220,6 +220,7 @@ namespace DOAN_CHUNGKHOAN
                 Program.myReader = Program.ExecSqlDataReader(strLenh);
                 MessageBox.Show("Reset thành công ", "Thông báo", MessageBoxButtons.OK);
                 this.lENHDATTableAdapter.Fill(this.cHUNGKHOANDataSet.LENHDAT);
+                btnReset.Enabled = false;
             }
             catch (Exception ex)
             {
