@@ -22,12 +22,6 @@ namespace DOAN_CHUNGKHOAN
         public static String mlogin = "sa";
         public static String password = "0909";
         public static Boolean check = true;
-        //public static String servername = "LQUYNH"; // luu ten server tra vè ở form dang nhap
-        //public static String username = "";
-        //public static String mlogin = "sa";
-        //public static String password = "1";
-        //public static Boolean check = true;
-
         public static String database = "CHUNGKHOAN";
         
         public static int KetNoi()

@@ -95,9 +95,9 @@
             this.groupBox4.Controls.Add(this.listBox2);
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.groupBox4.Location = new System.Drawing.Point(1203, 17);
+            this.groupBox4.Location = new System.Drawing.Point(1144, 17);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(320, 291);
+            this.groupBox4.Size = new System.Drawing.Size(379, 291);
             this.groupBox4.TabIndex = 7;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "THÔNG TIN";
@@ -139,7 +139,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1200, 291);
+            this.dataGridView1.Size = new System.Drawing.Size(1141, 291);
             this.dataGridView1.TabIndex = 1;
             // 
             // listBox1
@@ -162,7 +162,7 @@
             this.groupBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox3.Size = new System.Drawing.Size(1204, 352);
+            this.groupBox3.Size = new System.Drawing.Size(1144, 352);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "SỔ LỆNH";
@@ -174,7 +174,7 @@
             this.lENHDATGridControl.Location = new System.Drawing.Point(3, 17);
             this.lENHDATGridControl.MainView = this.gridView1;
             this.lENHDATGridControl.Name = "lENHDATGridControl";
-            this.lENHDATGridControl.Size = new System.Drawing.Size(1198, 333);
+            this.lENHDATGridControl.Size = new System.Drawing.Size(1141, 333);
             this.lENHDATGridControl.TabIndex = 0;
             this.lENHDATGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -227,11 +227,11 @@
             this.groupBox1.Controls.Add(this.radioMua);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox1.Location = new System.Drawing.Point(1204, 310);
+            this.groupBox1.Location = new System.Drawing.Point(1144, 310);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(322, 352);
+            this.groupBox1.Size = new System.Drawing.Size(382, 352);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ĐẶT LỆNH MỚI";
